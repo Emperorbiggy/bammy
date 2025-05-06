@@ -1087,17 +1087,24 @@ p {
     font-size: 24px;
   }
   .contact-popup {
-    padding: 40px 20px 30px;
+    padding: 80px 20px 30px; /* increased top padding to clear space for h2 */
+    overflow-y: auto;        /* ensures content scrolls if needed */
+    max-height: 100vh;       /* full viewport height */
   }
 
   .contact-popup h2 {
     font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
   }
 
   .contact-footer {
     flex-direction: column;
     gap: 10px;
     font-size: 13px;
+    text-align: center;
   }
 }
 
@@ -1162,7 +1169,8 @@ p {
   <p class="intro-subtitle">
     Nollywood & Stage Actress | Storyteller | Voice that stays with you.
   </p>
-  <button class="btn book-btn mt-3">Book Bambam</button>
+  <button type="button" class="btn book-btn book-now mt-3">Book Bambam</button>
+
 </section>
 
 <!-- About Section -->
@@ -1788,25 +1796,34 @@ In collaboration with MTV Base Africa, Bamike collaborated with renowned stars l
   });
 </script>
 <script>
-    const popup = document.getElementById('contactPopup');
-    const openBtns = document.querySelector('.book-now');
-    const closeBtns = document.querySelector('.close-btn');
-  
-    openBtns.addEventListener('click', function (e) {
-      e.preventDefault();
+    document.addEventListener('DOMContentLoaded', function () {
+  const popup = document.getElementById('contactPopup');
+  const openBtns = document.querySelectorAll('.book-now');
+  const closeBtn = document.querySelector('.close-btn');
+
+  // Open popup on any .book-now element
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault(); // prevent link default behavior
       popup.classList.add('active');
     });
-  
-    closeBtns.addEventListener('click', function () {
+  });
+
+  // Close popup on close button
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
       popup.classList.remove('active');
     });
-  
-    // Optional: click outside to close
-    window.addEventListener('click', function (e) {
-      if (e.target === popup) {
-        popup.classList.remove('active');
-      }
-    });
+  }
+
+  // Close popup on clicking outside the popup content
+  window.addEventListener('click', function (e) {
+    if (e.target === popup) {
+      popup.classList.remove('active');
+    }
+  });
+});
+
   </script>
   
   
