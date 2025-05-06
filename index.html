@@ -9,6 +9,12 @@
 <title>Bammy Bestowed</title>
 <meta name="title" content="Bammy Bestowed – Actor | Creator | Storyteller">
 <meta name="description" content="Welcome to the official website of Bammy Bestowed – explore filmography, interviews, behind-the-scenes moments, and get in touch for bookings.">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
 
 <!-- Keywords for SEO -->
 <meta name="keywords" content="Bammy Bestowed, actor, actress, filmmaker, Nigerian film, Nollywood, book Bammy, celebrity interviews, movie roles, behind the scenes, storytelling, entertainment">
@@ -124,7 +130,7 @@ html {
     .hero-section {
       position: relative;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1rem 0.5rem;
       overflow: hidden;
     }
 
@@ -144,10 +150,10 @@ html {
 
     .hero-image {
       position: relative;
-      z-index: 2;
+      z-index: 1;
       max-width: 500px;
       width: 90%;
-      margin: 0 auto;
+      margin: 2 auto;
     }
     .intro-section {
   background-color: #f8f4ec; /* white-ish background */
@@ -694,6 +700,248 @@ p {
   font-size: 1.2rem;
 }
 
+.privacy-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto; /* Important! */
+  padding: 40px 20px; /* Ensures top is visible */
+  justify-content: center;
+  align-items: flex-start; /* Ensure content starts from the top */
+  background: rgba(30, 30, 30, 0.85);
+  z-index: 9999;
+}
+
+
+.privacy-content {
+  background-color: #fdf3e5;
+  color: #1a1a1a;
+  max-width: 800px;
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.privacy-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.privacy-content h3 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.privacy-content p,
+.privacy-content ul {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.privacy-content ul {
+  padding-left: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+.terms-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto; /* Important! */
+  padding: 40px 20px; /* Ensures top is visible */
+  justify-content: center;
+  align-items: flex-start; /* Ensure content starts from the top */
+  background: rgba(30, 30, 30, 0.85);
+  z-index: 9999;
+}
+
+.terms-content {
+  background-color: #fdf3e5;
+  color: #1a1a1a;
+  max-width: 800px;
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.terms-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.terms-content h3 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.terms-content p,
+.terms-content ul {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.terms-content ul {
+  padding-left: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+/* Popup Overlay */
+/* === Contact Popup === */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+.contact-popup {
+  background-color: #f9f5f0;
+  border-radius: 20px;
+  padding: 60px 30px 40px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-popup h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0;
+  color: #2b1f1f;
+}
+
+.contact-popup p {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #4a4a4a;
+}
+
+.contact-popup form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-popup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3d3d3d;
+}
+
+.contact-popup input,
+.contact-popup textarea {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 5px;
+  background-color: transparent;
+  font-size: 14px;
+  color: #2b2b2b;
+  width: 100%;
+  outline: none;
+}
+
+.contact-popup textarea {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  min-height: 120px;
+  resize: vertical;
+  padding: 10px;
+}
+
+.contact-popup button {
+  background-color: #8c724c;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-popup button:hover {
+  background-color: #6d5c3b;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 26px;
+  color: #444;
+  cursor: pointer;
+}
+
+.contact-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 14px;
+  color: #3c3c3c;
+  align-items: center;
+}
+
+.contact-footer i {
+  margin-right: 6px;
+}
 
 
 
@@ -830,6 +1078,26 @@ p {
     font-size: 0.95rem;
     display: block;
     margin-top: 0.25rem;
+  }
+  .privacy-content {
+    padding: 20px 16px;
+  }
+
+  .privacy-title {
+    font-size: 24px;
+  }
+  .contact-popup {
+    padding: 40px 20px 30px;
+  }
+
+  .contact-popup h2 {
+    font-size: 20px;
+  }
+
+  .contact-footer {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
   }
 }
 
@@ -1287,7 +1555,7 @@ In collaboration with MTV Base Africa, Bamike collaborated with renowned stars l
         <div class="col-md-6">
           <h2>Book an<br>Appointment</h2>
           <p>From beauty tips to keynote talks, let’s create something unforgettable.</p>
-          <a href="#" class="btn">Book Now</a>
+          <a href="#" class="btn book-now">Book Now</a>
         </div>
         <div class="col-md-6 text-center">
           <img src="/assets/images/appointment-photo.png" alt="Appointment Photo" />
@@ -1315,6 +1583,124 @@ In collaboration with MTV Base Africa, Bamike collaborated with renowned stars l
     </div>
   </section>
   
+
+  <div class="popup-overlay" id="contactPopup">
+    <div class="contact-popup">
+      <span class="close-btn">&times;</span>
+  
+      <h2><em>Contact Form</em></h2>
+      <p>From feature films to keynote talks, let’s create something unforgettable.</p>
+  
+      <form>
+        <div>
+          <label>I am interested in :</label>
+          <input type="text" placeholder="Enter Services">
+        </div>
+        <div>
+          <label>Your name</label>
+          <input type="text" placeholder="Jhon Smith">
+        </div>
+        <div>
+          <label>Your email</label>
+          <input type="email" placeholder="email@gmail.com">
+        </div>
+        <div>
+          <label>Your message</label>
+          <textarea placeholder="Your message..."></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+  
+      <div class="contact-footer">
+        <span><i class="fas fa-envelope"></i> bament@gmail.com</span>
+        <span><i class="fas fa-phone"></i> +234 817 347 7464</span>
+      </div>
+    </div>
+  </div>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" class="privacy-modal">
+  <div class="privacy-content">
+    <button id="closePrivacy" class="close-btn">&times;</button>
+    <h2><em>Privacy Policy</em></h2>
+    <p><strong>Effective Date:</strong> [Insert Date]</p>
+    <p>This Privacy Policy explains how we collect, use, and protect your information when you visit Bambam's official website.</p>
+
+    <h3>1. Information We Collect</h3>
+    <p><strong>Personal Information:</strong> When you contact us or sign up for updates, we may collect personal information such as your name, email address, and phone number.</p>
+    <p><strong>Usage Data:</strong> We collect non-personal information such as browser type, device, and pages visited for analytics purposes.</p>
+
+    <h3>2. How We Use Your Information</h3>
+    <ul>
+      <li>Respond to inquiries or service requests</li>
+      <li>Send updates about upcoming projects, campaigns, or appearances</li>
+      <li>Improve website performance and user experience</li>
+      <li>Fulfill any contractual or legal obligations</li>
+    </ul>
+
+    <h3>3. Sharing of Information</h3>
+    <p>We do not sell or rent your personal information. Information may be shared with trusted third-party service providers solely for the purpose of operating this site or delivering communications.</p>
+
+    <h3>4. Cookies and Tracking</h3>
+    <p>We may use cookies to enhance user experience and analyze traffic. You can modify your browser settings to refuse cookies, but this may affect the site.</p>
+
+    <h3>5. Data Security</h3>
+    <p>We take reasonable steps to protect your information from unauthorized access. However, no internet transmission is completely secure.</p>
+
+    <h3>6. Children’s Privacy</h3>
+    <p>This website is not directed to individuals under the age of 13. We do not knowingly collect personal information from children.</p>
+
+    <h3>7. Your Rights</h3>
+    <p>You have the right to:</p>
+    <ul>
+      <li>Access the personal data we hold about you</li>
+      <li>Request correction or deletion of your data</li>
+      <li>Opt out of future communications</li>
+    </ul>
+    <p>To exercise these rights, contact us at: [Insert Contact Email]</p>
+
+    <h3>8. Policy Updates</h3>
+    <p>We may update this Privacy Policy from time to time. The latest version will always be posted here with an updated effective date.</p>
+  </div>
+</div>
+<!-- Terms and Conditions Modal -->
+<div id="termsModal" class="terms-modal">
+  <div class="terms-content">
+    <button id="closeTerms" class="close-btn">&times;</button>
+    <h2><em>Terms and Conditions</em></h2>
+    <p>Welcome to Bambam's official website. By accessing or using this site, you agree to comply with and be bound by the following terms and conditions. If you do not agree to these terms, please do not use the site.</p>
+
+    <h3>1. Services</h3>
+    <p>This platform offers promotional services related to the professional work of Bambam (Bamike), including but not limited to voice-over artistry, acting, directing, public speaking, advocacy campaigns, and brand collaborations.</p>
+
+    <h3>2. Intellectual Property</h3>
+    <p>All content on this site—including text, images, videos, logos, and branding—is the intellectual property of Bambam or its licensors and is protected under copyright and trademark laws. You may not reproduce, distribute, or use any content without prior written permission.</p>
+
+    <h3>3. User Conduct</h3>
+    <p>Users agree not to:</p>
+    <ul>
+      <li>Use the site for unlawful purposes.</li>
+      <li>Attempt to interfere with the website’s functionality or security.</li>
+      <li>Submit false or misleading information.</li>
+      <li>Violate any rights of third parties, including privacy or intellectual property rights.</li>
+    </ul>
+
+    <h3>4. Collaborations and Endorsements</h3>
+    <p>Any partnerships, endorsements, or campaigns promoted through this site will be clearly identified. Users engaging with these offerings are encouraged to conduct their own due diligence before participation.</p>
+
+    <h3>5. Limitation of Liability</h3>
+    <p>While we strive to maintain accurate and up-to-date information, the site is provided "as is." We do not guarantee the accuracy, completeness, or timeliness of the information. We are not liable for any loss or damage arising from the use or inability to use the site.</p>
+
+    <h3>6. Third-Party Links</h3>
+    <p>This website may contain links to third-party websites. These links are provided for convenience only, and we are not responsible for the content or practices of those sites.</p>
+
+    <h3>7. Changes to Terms</h3>
+    <p>We reserve the right to update or modify these terms at any time without prior notice. Your continued use of the site constitutes your acceptance of any changes.</p>
+  </div>
+</div>
+
+
+  
   <!-- Footer Section -->
   <footer class="site-footer py-4">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
@@ -1329,9 +1715,11 @@ In collaboration with MTV Base Africa, Bamike collaborated with renowned stars l
       <div class="text-center text-md-start mt-3 mt-md-0">
         <small>&copy; 2025. Bam Ent. All Rights Reserved.</small>
         <span class="mx-2">|</span>
-        <a href="#">Privacy Policy</a>
-        <span class="mx-2">|</span>
-        <a href="#">Terms of Service</a>
+<a href="#" id="privacyLink">Privacy Policy</a>
+
+<span class="mx-2">|</span>
+<a href="#" id="termsLink">Terms of Service</a>
+
       </div>
   
       <!-- Social Icons -->
@@ -1357,6 +1745,72 @@ In collaboration with MTV Base Africa, Bamike collaborated with renowned stars l
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Swiper init -->
+<script>
+  const modal = document.getElementById('privacyModal');
+  const openBtn = document.getElementById('privacyLink'); // link in nav
+  const closeBtn = document.getElementById('closePrivacy');
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // prevents page from jumping
+    modal.style.display = 'flex';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+</script>
+<script>
+  // Terms Modal
+  const termsModal = document.getElementById('termsModal');
+  const openTerms = document.getElementById('termsLink');
+  const closeTerms = document.getElementById('closeTerms');
+
+  openTerms.addEventListener('click', function (e) {
+    e.preventDefault();
+    termsModal.style.display = 'flex';
+    termsModal.scrollTop = 0;
+  });
+
+  closeTerms.addEventListener('click', () => {
+    termsModal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === termsModal) {
+      termsModal.style.display = 'none';
+    }
+  });
+</script>
+<script>
+    const popup = document.getElementById('contactPopup');
+    const openBtns = document.querySelector('.book-now');
+    const closeBtns = document.querySelector('.close-btn');
+  
+    openBtns.addEventListener('click', function (e) {
+      e.preventDefault();
+      popup.classList.add('active');
+    });
+  
+    closeBtns.addEventListener('click', function () {
+      popup.classList.remove('active');
+    });
+  
+    // Optional: click outside to close
+    window.addEventListener('click', function (e) {
+      if (e.target === popup) {
+        popup.classList.remove('active');
+      }
+    });
+  </script>
+  
+  
+
 <script>
   const swiper = new Swiper('.news-swiper', {
     loop: true,
