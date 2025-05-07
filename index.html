@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bammy Bestowed</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+   @font-face {
+  font-family: 'Ahganirya';
+  src: url('/fonts/Ahganirya-Regular.woff2') format('woff2'),
+       url('/fonts/Ahganirya-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Optional Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,600&display=swap');
+
+body {
+  font-family: 'Ahganirya', 'Playfair Display', serif;
+  margin: 0;
+  background-color: #e7d6ba;
+  color: #3d342a;
+}
+
+.logo,
+.hero-section,
+.hero-background-text {
+  font-family: 'Ahganirya', serif;
+}
+
+
+    /* Header */
+    .custom-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #c4b59e;
+    }
+
+    .logo {
+      line-height: 1;
+    }
+
+    .logo span:first-child {
+      display: block;
+      font-size: 2.25rem;
+      color: #a68e67;
+      font-weight: 500;
+    }
+
+    .logo span:last-child {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-left: 1rem;
+    }
+
+    .nav-links {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.75rem; /* Adjust to control spacing */
+  align-items: center;
+}
+
+.social-icons a {
+  color: #3d342a;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      text-align: center;
+      padding: 2rem 1rem;
+      overflow: hidden;
+    }
+
+    .hero-background-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -55%);
+      font-size: 12vw;
+      color: #a68e67;
+      opacity: 0.25;
+      line-height: 0.9;
+      z-index: 1;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 2;
+      max-width: 500px;
+      width: 90%;
+      margin: 0 auto;
+    }
+    .intro-section {
+  background-color: #f8f4ec; /* white-ish background */
+  color: #3d342a;
+}
+
+.intro-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.intro-subtitle {
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.book-btn {
+  background-color: #a68e67;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #8e764d;
+}
+.about-me-wrapper {
+  background-color:#f9f9f9;
+}
+
+.about-heading {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #3d342a;
+}
+
+.about-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-text {
+  flex: 1 1 500px;
+  color: #3d342a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.about-text .intro-italic {
+  font-style: italic;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.about-image {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+/* Section Background and Padding */
+.quick-facts-section {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  color: #2e2e2e;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Section Title */
+.quick-facts-title {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #888;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* Grid Container */
+.facts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Individual Column */
+.fact-group {
+  flex: 1 1 250px;
+}
+
+/* Paragraph Styling */
+.fact-group p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Label (e.g. Languages, Causes) */
+.fact-label {
+  display: block;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 2px;
+}
+
+/* Value (actual fact content) */
+.fact-value {
+  display: block;
+  font-weight: 600;
+  font-style: italic;
+  font-family: Helvetica;
+  color: #080808;
+}
+.filmography-section {
+  background-color: #f9f9f9;
+  color: #ccc;
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.filmography-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-style: italic;
+  color: #a57b65;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.film-item {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.film-thumb iframe {
+  width: 360px;
+  height: 200px;
+  border-radius: 6px;
+}
+
+.film-info {
+  flex: 1;
+  max-width: 500px;
+}
+
+.film-info h3 {
+  font-size: 20px;
+  color: #0c0c0c;
+  margin-bottom: 8px;
+}
+
+.film-info p {
+  font-size: 14px;
+  color: #181818;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.film-info span {
+  font-size: 14px;
+  color: #a57b65;
+  font-weight: 500;
+}
+
+.show-more-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.show-more-btn {
+  background-color: #a57b65;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background-color: #8f6550;
+}
+/* Interview Section Styling */
+.interviews-section {
+  background-color: #f8f4ec;
+  padding: 4rem 1rem;
+}
+
+.interviews-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.5rem;
+  color: #a57b65;
+  margin-bottom: 3rem;
+}
+
+/* Card Style */
+.interviews-section .card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interviews-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Image */
+.interviews-section .card-img-top {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Card Body */
+.interviews-section .card-body {
+  padding: 1.25rem;
+  background-color: #f8f4ec;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.interviews-section .card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #5c4333;
+  margin-bottom: 0.5rem;
+}
+
+.interviews-section .card-text {
+  font-family: 'Arial', sans-serif;
+  color: #5f4c41;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.life-gallery {
+  background-color: #f9f5f0;
+  padding: 4rem 0;
+}
+
+.life-gallery h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.5rem;
+  color: #6a5140;
+  margin-bottom: 2rem;
+}
+
+.life-gallery h5 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #8a6d5d;
+  margin-bottom: 1.2rem;
+  border-left: 3px solid #b1917f;
+  padding-left: 0.5rem;
+}
+
+/* Consistent spacing */
+.life-gallery .row {
+  margin-bottom: 3rem;
+}
+
+/* Make all images square and responsive */
+.life-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.life-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Adjust carousel image padding */
+.life-gallery .carousel-inner img {
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.news-blog-section {
+  background-color: #f5f5f5;
+  padding: 80px 0;
+}
+
+.news-blog-section h2 {
+  /* text-align: center; */
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2rem;
+  color: #4a3d38;
+  margin-bottom: 40px;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.news-card img {
+  width: 45%;
+  object-fit: cover;
+}
+
+.news-card-body {
+  padding: 20px;
+  width: 55%;
+}
+
+.news-card-body h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.news-card-body p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.news-date {
+  margin-top: 15px;
+  color: #a57b65;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.swiper-pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background: #a57b65;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #a57b65;
+  opacity: 1;
+}
+.brands-section {
+  background-color: #fcf8f3;
+  padding: 4rem 1rem;
+}
+
+.brands-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #5c4333;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.brand-item {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.brand-item img {
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.brand-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.brand-description {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.3rem;
+}
+
+/* === Shared Typography === */
+h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #2f2a28;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  color: #4e4e4e;
+}
+
+/* === Book an Appointment === */
+.appointment-section {
+  background-color: #d6c7b2;
+  padding: 15px 1;
+}
+
+.appointment-section h2 {
+  font-style: italic;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.appointment-section p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.appointment-section .btn {
+  background-color: #2f2a28;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.appointment-section .btn:hover {
+  background-color: #1e1a18;
+}
+
+.appointment-section img {
+  max-width: 100%;
+  border-radius: 8px;
+  height: auto;
+}
+
+/* === Newsletter Section === */
+.newsletter-section {
+  background-color: #f6f1ea;
+  padding: 80px 0;
+}
+
+.newsletter-section h2 {
+  font-style: italic;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.newsletter-section p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.newsletter-section input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.newsletter-section button[type="submit"] {
+  background-color: #a57b65;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-section button:hover {
+  background-color: #8d604d;
+}
+
+/* === Footer Section === */
+.site-footer {
+  background-color: #f7f4ee;
+  border-top: 1px solid #d8d1c2;
+  font-family: 'Playfair Display', serif;
+}
+
+
+
+.site-footer a {
+  color: #2c2c2c;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  color: #a68e67;
+  font-size: 1.2rem;
+}
+
+
+
+
+@media (max-width: 767.98px) {
+  .custom-header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .navbar-toggler {
+    display: block;
+    margin-left: auto;
+    border: none;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+    gap: 0.5rem;
+  }
+
+  .nav-links .nav-link {
+    padding: 0.5rem 0;
+  }
+
+  .social-icons {
+    justify-content: start;
+    margin-top: 1rem;
+  }
+
+  .logo {
+    align-items: flex-start;
+    font-size: 1.2rem;
+  }
+
+  .logo span:first-child {
+    font-size: 1rem;
+  }
+
+  .logo span:last-child {
+    font-size: 1.25rem;
+  }
+
+  .hero-background-text {
+    font-size: 18vw;
+  }
+
+  .life-gallery .carousel-inner img {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .life-gallery h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .interviews .row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .interview-card {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: none;
+  }
+
+  .footer {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .footer a {
+    font-size: 0.95rem;
+    display: block;
+    margin-top: 0.25rem;
+  }
+}
+
+
+    
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="custom-header navbar navbar-expand-lg">
+    <!-- Logo -->
+    <div class="logo navbar-brand">
+      <span>Bammy</span>
+      <span>Bestowed</span>
+    </div>
+  
+    <!-- Toggler (hamburger icon) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Nav links and social icons -->
+    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+        <nav class="nav-links navbar-nav mx-auto mb-2 mb-lg-0">
+          <a class="nav-link" href="#">About Me</a>
+          <a class="nav-link" href="#">Filmography</a>
+          <a class="nav-link" href="#">Interviews</a>
+          <a class="nav-link" href="#">News & Blog</a>
+          <a class="nav-link" href="#">Book Me</a>
+        </nav>
+      
+        <div class="social-icons d-flex ms-auto">
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      
+  </header>
+  
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <!-- Text Behind Image -->
+  <div class="hero-background-text">Bammy<br>Bestowed</div>
+
+  <!-- Hero Image -->
+  <img src="/assets/images/hero.png" alt="Bammy" class="img-fluid hero-image">
+</section>
+<!-- Hero Text Content -->
+<!-- Tagline Section -->
+<!-- Intro Section -->
+<section class="intro-section text-center py-5 px-3">
+  <h1 class="intro-heading">
+    <em>Fearless on Screen,</em><br>
+    <em>Limitless in Life</em>
+  </h1>
+  <p class="intro-subtitle">
+    Nollywood & Stage Actress | Storyteller | Voice that stays with you.
+  </p>
+  <button class="btn book-btn mt-3">Book Bambam</button>
+</section>
+
+<!-- About Section -->
+<section class="about-me-wrapper py-5 px-3 text-center">
+  <h2 class="about-heading">About Me</h2>
+  <div class="about-content d-flex flex-wrap justify-content-center align-items-start mt-4">
+    <div class="about-image me-md-4 mb-4 mb-md-0">
+      <img src="/assets/images/about-image.png" alt="Bammy Bestowed" />
+    </div>
+    <div class="about-text text-start">
+      <p class="intro-italic">
+        <em>
+            Bamike-Olawumi Adenibuyan known as Bammy Bestowed is a multifaceted personality, renowned as an actress, lifestyle influencer, host, humanitarian, and a former housemate on Big Brother Naija Season 3.
+        </em>
+      </p>
+      <p>
+        Bammy Bestowed  is a talented actor, and a good storyteller, she is a professional voice over artist and is good at directing.
+In collaboration with MTV Base Africa, Bamike collaborated with renowned stars like 2face Idibia and Tiwa Savage to drive awareness regarding civic responsibility, specifically emphasizing the importance of registering and securing Permanent Voter’s Cards ahead of elections in the country.
+
+      </p>
+      <p>
+        Her impressive on-screen portfolio includes acclaimed projects like the social drama "Collision Course" and "Lockdown." She has also showcased her talent in various stage plays, including ''Love is the Musical”, “Fela And The Kalakuta Queens”, ”Queen Moremi The Musical”, and “Ada The Country.”
+
+      </p>
+      <p>
+        Beyond her roles on-screen and on-stage, Bamike is a devoted wife and mother to two beautiful children. Her passion extends to addressing and advocating for women and children's rights, as well as actively speaking on issues related to mental health and postpartum depression.
+
+      </p>
+    </div>
+  </div>
+</section>
+<!-- Quick Facts Section -->
+<section class="quick-facts-section">
+  <div class="container">
+    <h6 class="quick-facts-title">Quick Facts</h6>
+    <div class="facts-grid">
+      <div class="fact-group">
+        <p><span class="fact-label">Languages</span><br> English | Yoruba | Pidgin</p>
+        <p><span class="fact-label">Social Footprint</span><br> 1.9M Instagram | 192K X | 28.6K YouTube</p>
+      </div>
+      <div class="fact-group">
+        <p><span class="fact-label">Specialties</span><br> Mezzo-soprano vocals | African & contemporary dance | Method acting</p>
+        <p><span class="fact-label">Causes</span><br> Maternal health | Girl-child education | Mental-wellness</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="filmography-section">
+  <div class="container">
+    <h2 class="filmography-title">Filmography</h2>
+
+    <div class="film-item">
+      <div class="film-thumb">
+        <iframe src="https://www.youtube.com/embed/GwwLna5zxpk" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="film-info">
+        <h3>Twin Deception</h3>
+        <p>Separated at birth, ambitious lawyer Teni and struggling artist Tola swap lives to avenge a past betrayal. The ruse uncovers a billion-naira conspiracy that could cost the sisters their freedom—and their newfound bond.</p>
+        <span>2025</span>
+      </div>
+    </div>
+
+    <div class="film-item">
+      <div class="film-thumb">
+        <iframe src="https://www.youtube.com/embed/bslcx4LRFL0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="film-info">
+        <h3>Love in Every Word</h3>
+        <p>A jaded radio host must prove true love exists or lose her show. Anonymous letters from a mysterious chef rekindle hope—until the envelopes stop and she must risk her heart on air.</p>
+        <span>2025</span>
+      </div>
+    </div>
+
+    <div class="film-item">
+      <div class="film-thumb">
+        <iframe src="https://www.youtube.com/embed/Slxm189-MXk" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="film-info">
+        <h3>Love in Every Word</h3>
+        <p>A jaded radio host must prove true love exists or lose her show. Anonymous letters from a mysterious chef rekindle hope—until the envelopes stop and she must risk her heart on air.</p>
+        <span>2025</span>
+      </div>
+    </div>
+    <div class="film-item">
+      <div class="film-thumb">
+        <iframe src="https://www.youtube.com/embed/KGkWFuk9xUE" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="film-info">
+        <h3>Love in Every Word</h3>
+        <p>A jaded radio host must prove true love exists or lose her show. Anonymous letters from a mysterious chef rekindle hope—until the envelopes stop and she must risk her heart on air.</p>
+        <span>2025</span>
+      </div>
+    </div>
+
+    <div class="show-more-wrapper">
+      <button class="show-more-btn">Show more</button>
+    </div>
+  </div>
+</section>
+
+<section class="interviews-section py-5 px-3" style="background-color: #f8f4ec;">
+  <div class="container">
+    <h2 class="text-center" style="font-family: 'Playfair Display', serif; font-style: italic; color: #a57b65; font-size: 2rem; margin-bottom: 40px;">
+      In the Spotlight
+    </h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 h-100 shadow-sm">
+          <img src="/assets/images/interview1.png" class="card-img-top" alt="Interview 1">
+          <div class="card-body">
+            <h5 class="card-title">ThisDay Newspaper</h5>
+            <p class="card-text">"BamBam: I See Every Script as Opportunity to Step into Someone Else’s Shoes, Bring Their Story to Life"</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 h-100 shadow-sm">
+          <img src="/assets/images/interview2.png" class="card-img-top" alt="Interview 2">
+          <div class="card-body">
+            <h5 class="card-title">CNN</h5>
+            <p class="card-text">"Fela & the Kalakuta Queens takes South Africa by storm"</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 h-100 shadow-sm">
+          <img src="/assets/images/interview3.png" class="card-img-top" alt="Interview 3">
+          <div class="card-body">
+            <h5 class="card-title">EbonyLife</h5>
+            <p class="card-text">"God Just Decided To Show Me Off” — Bambam on The Word success"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="life-gallery py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Life</h2>
+  
+      <!-- ========== On-Set Diaries ========== -->
+      <h5>On-Set Diaries</h5>
+  
+      <!-- Mobile carousel -->
+      <div class="d-block d-md-none mb-4">
+        <div id="onSetCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/assets/images/onset1.png" class="d-block w-100 img-fluid" alt="On-Set 1">
+            </div>
+            <div class="carousel-item">
+              <img src="/assets/images/onset2.png" class="d-block w-100 img-fluid" alt="On-Set 2">
+            </div>
+            <div class="carousel-item">
+              <img src="/assets/images/onset3.png" class="d-block w-100 img-fluid" alt="On-Set 3">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#onSetCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#onSetCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+  
+      <!-- Desktop grid -->
+      <div class="row g-3 d-none d-md-flex">
+        <div class="col-md-4">
+          <img src="/assets/images/onset1.png" alt="On-Set 1" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+          <img src="/assets/images/onset2.png" alt="On-Set 2" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+          <img src="/assets/images/onset3.png" alt="On-Set 3" class="img-fluid">
+        </div>
+      </div>
+  
+      <!-- ========== Family Moments ========== -->
+      <h5>Family Moments</h5>
+  
+      <!-- Mobile carousel -->
+      <div class="d-block d-md-none mb-4">
+        <div id="familyCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/assets/images/family1.png" class="d-block w-100 img-fluid" alt="Family 1">
+            </div>
+            <div class="carousel-item">
+              <img src="/assets/images/family2.png" class="d-block w-100 img-fluid" alt="Family 2">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#familyCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#familyCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+  
+      <!-- Desktop grid -->
+      <div class="row g-3 d-none d-md-flex">
+        <div class="col-md-4">
+          <img src="/assets/images/family1.png" alt="Family 1" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+          <img src="/assets/images/family2.png" alt="Family 2" class="img-fluid">
+        </div>
+      </div>
+  
+      <!-- ========== Travel Moments ========== -->
+<h5>Travel Moments</h5>
+
+<!-- Mobile carousel (1 at a time) -->
+<div class="d-block d-md-none mb-4">
+  <div id="travelCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/assets/images/travel1.png" class="d-block w-100 img-fluid" alt="Travel 1">
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/images/travel2.png" class="d-block w-100 img-fluid" alt="Travel 2">
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/images/travel3.png" class="d-block w-100 img-fluid" alt="Travel 3">
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/images/travel4.png" class="d-block w-100 img-fluid" alt="Travel 4">
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/images/travel5.png" class="d-block w-100 img-fluid" alt="Travel 5">
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/images/travel6.png" class="d-block w-100 img-fluid" alt="Travel 6">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#travelCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#travelCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<!-- Desktop grid (3 per row) -->
+<div class="row g-3 d-none d-md-flex">
+  <div class="col-md-4">
+    <img src="/assets/images/travel1.png" alt="Travel 1" class="img-fluid">
+  </div>
+  <div class="col-md-4">
+    <img src="/assets/images/travel2.png" alt="Travel 2" class="img-fluid">
+  </div>
+  <div class="col-md-4">
+    <img src="/assets/images/travel3.png" alt="Travel 3" class="img-fluid">
+  </div>
+  <div class="col-md-4">
+    <img src="/assets/images/travel4.png" alt="Travel 4" class="img-fluid">
+  </div>
+  <div class="col-md-4">
+    <img src="/assets/images/travel5.png" alt="Travel 5" class="img-fluid">
+  </div>
+  <div class="col-md-4">
+    <img src="/assets/images/travel6.png" alt="Travel 6" class="img-fluid">
+  </div>
+</div>
+
+  </section>
+  
+
+<section class="news-blog-section">
+  <div class="container">
+    <h2>News & Blog</h2>
+
+    <!-- Swiper -->
+    <div class="swiper news-swiper">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="news-card">
+            <img src="/assets/images/news-feature.png" alt="News Image">
+            <div class="news-card-body">
+              <h4>Twin Deception hits 2 million views in six days</h4>
+              <p>
+                <p>Bambam is a talented actor, and a good storyteller, she is a professional voice over artist and is good at directing.</p>
+<p>In collaboration with MTV Base Africa, Bamike collaborated with renowned stars like 2face Idibia and Tiwa Savage to drive awareness regarding civic responsibility, specifically emphasizing the importance of registering and securing Permanent Voter’s Cards ahead of elections in the country.</p>
+
+<p>Her impressive on-screen portfolio includes acclaimed projects like the social drama "Collision Course" and "Lockdown." She has also showcased her talent in various stage plays, including ''Love is the Musical”, “Fela And The Kalakuta Queens”, ”Queen Moremi The Musical”, and “Ada The Country.”
+
+<p>Beyond her roles on-screen and on-stage, Bamike is a devoted wife and mother to two beautiful children. Her passion extends to addressing and advocating for women and children's rights, as well as actively speaking on issues related to mental health and postpartum depression.</p>
+
+              </p>
+              <div class="news-date">April 3rd, 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 (duplicate for demo) -->
+        <div class="swiper-slide">
+          <div class="news-card">
+            <img src="/assets/images/news-feature.png" alt="News Image 2">
+            <div class="news-card-body">
+              <h4>New Series Set to Premiere This Summer</h4>
+              <p>
+                <p>Bambam is a talented actor, and a good storyteller, she is a professional voice over artist and is good at directing.</p>
+<p>In collaboration with MTV Base Africa, Bamike collaborated with renowned stars like 2face Idibia and Tiwa Savage to drive awareness regarding civic responsibility, specifically emphasizing the importance of registering and securing Permanent Voter’s Cards ahead of elections in the country.</p>
+
+<p>Her impressive on-screen portfolio includes acclaimed projects like the social drama "Collision Course" and "Lockdown." She has also showcased her talent in various stage plays, including ''Love is the Musical”, “Fela And The Kalakuta Queens”, ”Queen Moremi The Musical”, and “Ada The Country.”
+
+<p>Beyond her roles on-screen and on-stage, Bamike is a devoted wife and mother to two beautiful children. Her passion extends to addressing and advocating for women and children's rights, as well as actively speaking on issues related to mental health and postpartum depression.</p>
+
+              </p>
+              <div class="news-date">May 1st, 2025</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Pagination dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<section class="brands-section">
+  <div class="container">
+    <h2>Brands</h2>
+    <div class="brand-grid">
+      <div class="brand-item">
+        <img src="/assets/images/maggi.png" alt="Maggi Nigeria">
+        <div class="brand-name">Maggi Nigeria</div>
+        <div class="brand-description">2023–Present</div>
+      </div>
+      <div class="brand-item">
+        <img src="/assets/images/kuda.png" alt="Kuda Bank">
+        <div class="brand-name">Kuda Bank</div>
+        <div class="brand-description">2023</div>
+      </div>
+      <div class="brand-item">
+        <img src="/assets/images/mtv.png" alt="MTV Base Africa">
+        <div class="brand-name">MTV Base Africa</div>
+        <div class="brand-description">2023</div>
+      </div>
+      <div class="brand-item">
+        <img src="/assets/images/dettol.png" alt="Dettol Nigeria">
+        <div class="brand-name">Dettol Nigeria</div>
+        <div class="brand-description">2023</div>
+      </div>
+      <div class="brand-item">
+        <img src="/assets/images/pampers.png" alt="Pampers Nigeria">
+        <div class="brand-name">Pampers Nigeria</div>
+        <div class="brand-description">2023</div>
+      </div>
+      <div class="brand-item">
+        <img src="/assets/images/houseoflunettes.png" alt="House of Lunettes">
+        <div class="brand-name">House of Lunettes</div>
+        <div class="brand-description">2023</div>
+      </div>
+      <div class="brand-item">
+        <img src="/assets/images/indomie.png" alt="Indomie">
+        <div class="brand-name">Indomie</div>
+        <div class="brand-description">“Do Good, Comfort” digital ad<br>2021</div>
+      </div>
+      <div class="brand-item">
+        <img src="/assets/images/tecno.png" alt="Tecno Mobile">
+        <div class="brand-name">Tecno Mobile</div>
+        <div class="brand-description">2020</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Book an Appointment -->
+<section class="appointment-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-6">
+          <h2>Book an<br>Appointment</h2>
+          <p>From beauty tips to keynote talks, let’s create something unforgettable.</p>
+          <a href="#" class="btn">Book Now</a>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="/assets/images/appointment-photo.png" alt="Appointment Photo" />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-6 text-center">
+          <img src="/assets/images/newsletter-photo.png" alt="Newsletter Photo" class="img-fluid rounded" />
+        </div>
+        <div class="col-md-6">
+          <h2>Subscribe to our Newsletter</h2>
+          <p>Get exclusive updates on projects, campaigns, and personal insights — straight to your inbox.</p>
+          <form class="d-flex flex-wrap gap-2">
+            <input type="email" class="form-control" placeholder="Enter your email address" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer Section -->
+  <footer class="site-footer py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <!-- Logo -->
+      <div class="logo">
+        <span>Bammy</span>
+        <span>Bestowed</span>
+      </div>
+      
+  
+      <!-- Center Text -->
+      <div class="text-center text-md-start mt-3 mt-md-0">
+        <small>&copy; 2025. Bam Ent. All Rights Reserved.</small>
+        <span class="mx-2">|</span>
+        <a href="#">Privacy Policy</a>
+        <span class="mx-2">|</span>
+        <a href="#">Terms of Service</a>
+      </div>
+  
+      <!-- Social Icons -->
+      <div class="social-icons d-flex gap-3 mt-3 mt-md-0">
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+  
+  
+
+<!-- Include Font Awesome for icons (if not already) -->
+<script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+
+
+<!-- Bootstrap Icons CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Swiper init -->
+<script>
+  const swiper = new Swiper('.news-swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 5000,
+    },
+  });
+</script>
+
+</body>
+
+</html>
