@@ -57,6 +57,10 @@ body {
   background-color: #e7d6ba;
   color: #3d342a;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 .logo,
 .hero-section,
@@ -289,16 +293,36 @@ body {
   gap: 24px;
   margin-bottom: 40px;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-.film-thumb iframe {
-  width: 360px;
-  height: 200px;
-  border-radius: 6px;
+.film-thumb {
+  flex: 1;
+  min-width: 300px;
+}
+
+.responsive-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
 }
 
 .film-info {
   flex: 1;
+  min-width: 300px;
   max-width: 500px;
 }
 
@@ -703,15 +727,15 @@ p {
 
   .logo {
     align-items: flex-start;
-    font-size: 1.2rem;
+    font-size: 2.2rem;
   }
 
   .logo span:first-child {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .logo span:last-child {
-    font-size: 1.25rem;
+    font-size: 2.25rem;
   }
 
   .hero-background-text {
@@ -747,7 +771,14 @@ p {
   .news-card-body {
     width: 100%;
   }
+  .film-item {
+    flex-direction: column;
+  }
 
+  .film-info,
+  .film-thumb {
+    max-width: 100%;
+  }
   .news-card img {
     height: auto;
   }
@@ -825,12 +856,13 @@ p {
     <!-- Nav links and social icons -->
     <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
         <nav class="nav-links navbar-nav mx-auto mb-2 mb-lg-0">
-          <a class="nav-link" href="#">About Me</a>
-          <a class="nav-link" href="#">Filmography</a>
-          <a class="nav-link" href="#">Interviews</a>
-          <a class="nav-link" href="#">News & Blog</a>
-          <a class="nav-link" href="#">Book Me</a>
-        </nav>
+            <a class="nav-link" href="#about">About Me</a>
+            <a class="nav-link" href="#filmography">Filmography</a>
+            <a class="nav-link" href="#interviews">Interviews</a>
+            <a class="nav-link" href="#news">News & Blog</a>
+            <a class="nav-link" href="#contact">Book Me</a>
+          </nav>
+          
       
         <div class="social-icons d-flex ms-auto">
           <a href="#"><i class="bi bi-instagram"></i></a>
@@ -866,7 +898,8 @@ p {
 </section>
 
 <!-- About Section -->
-<section class="about-me-wrapper py-5 px-3 text-center">
+<section id="about" class="about-me-wrapper py-5 px-3 text-center">
+
   <h2 class="about-heading">About Me</h2>
   <div class="about-content d-flex flex-wrap justify-content-center align-items-start mt-4">
     <div class="about-image me-md-4 mb-4 mb-md-0">
@@ -910,60 +943,70 @@ In collaboration with MTV Base Africa, Bamike collaborated with renowned stars l
     </div>
   </div>
 </section>
-<section class="filmography-section">
-  <div class="container">
-    <h2 class="filmography-title">Filmography</h2>
-
-    <div class="film-item">
-      <div class="film-thumb">
-        <iframe src="https://www.youtube.com/embed/GwwLna5zxpk" frameborder="0" allowfullscreen></iframe>
+<section id="filmography" class="filmography-section">
+    <div class="container">
+      <h2 class="filmography-title">Filmography</h2>
+  
+      <div class="film-item">
+        <div class="film-thumb">
+          <div class="responsive-video">
+            <iframe src="https://www.youtube.com/embed/GwwLna5zxpk" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="film-info">
+          <h3>Twin Deception</h3>
+          <p>Separated at birth, ambitious lawyer Teni and struggling artist Tola swap lives to avenge a past betrayal. The ruse uncovers a billion-naira conspiracy that could cost the sisters their freedom—and their newfound bond.</p>
+          <span>2025</span>
+        </div>
       </div>
-      <div class="film-info">
-        <h3>Twin Deception</h3>
-        <p>Separated at birth, ambitious lawyer Teni and struggling artist Tola swap lives to avenge a past betrayal. The ruse uncovers a billion-naira conspiracy that could cost the sisters their freedom—and their newfound bond.</p>
-        <span>2025</span>
+  
+      <div class="film-item">
+        <div class="film-thumb">
+          <div class="responsive-video">
+            <iframe src="https://www.youtube.com/embed/bslcx4LRFL0" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="film-info">
+          <h3>Love in Every Word</h3>
+          <p>A jaded radio host must prove true love exists or lose her show. Anonymous letters from a mysterious chef rekindle hope—until the envelopes stop and she must risk her heart on air.</p>
+          <span>2025</span>
+        </div>
+      </div>
+  
+      <div class="film-item">
+        <div class="film-thumb">
+          <div class="responsive-video">
+            <iframe src="https://www.youtube.com/embed/Slxm189-MXk" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="film-info">
+          <h3>A merry Side of You</h3>
+          <p>A jaded radio host must prove true love exists or lose her show. Anonymous letters from a mysterious chef rekindle hope—until the envelopes stop and she must risk her heart on air.</p>
+          <span>2025</span>
+        </div>
+      </div>
+  
+      <div class="film-item">
+        <div class="film-thumb">
+          <div class="responsive-video">
+            <iframe src="https://www.youtube.com/embed/KGkWFuk9xUE" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="film-info">
+          <h3>Cupcake for Val</h3>
+          <p>A jaded radio host must prove true love exists or lose her show. Anonymous letters from a mysterious chef rekindle hope—until the envelopes stop and she must risk her heart on air.</p>
+          <span>2025</span>
+        </div>
+      </div>
+  
+      <div class="show-more-wrapper">
+        <button class="show-more-btn">Show more</button>
       </div>
     </div>
+  </section>
+  
 
-    <div class="film-item">
-      <div class="film-thumb">
-        <iframe src="https://www.youtube.com/embed/bslcx4LRFL0" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="film-info">
-        <h3>Love in Every Word</h3>
-        <p>A jaded radio host must prove true love exists or lose her show. Anonymous letters from a mysterious chef rekindle hope—until the envelopes stop and she must risk her heart on air.</p>
-        <span>2025</span>
-      </div>
-    </div>
-
-    <div class="film-item">
-      <div class="film-thumb">
-        <iframe src="https://www.youtube.com/embed/Slxm189-MXk" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="film-info">
-        <h3>Love in Every Word</h3>
-        <p>A jaded radio host must prove true love exists or lose her show. Anonymous letters from a mysterious chef rekindle hope—until the envelopes stop and she must risk her heart on air.</p>
-        <span>2025</span>
-      </div>
-    </div>
-    <div class="film-item">
-      <div class="film-thumb">
-        <iframe src="https://www.youtube.com/embed/KGkWFuk9xUE" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="film-info">
-        <h3>Love in Every Word</h3>
-        <p>A jaded radio host must prove true love exists or lose her show. Anonymous letters from a mysterious chef rekindle hope—until the envelopes stop and she must risk her heart on air.</p>
-        <span>2025</span>
-      </div>
-    </div>
-
-    <div class="show-more-wrapper">
-      <button class="show-more-btn">Show more</button>
-    </div>
-  </div>
-</section>
-
-<section class="interviews-section py-5 px-3" style="background-color: #f8f4ec;">
+<section id="interviews" class="interviews-section py-5 px-3" style="background-color: #f8f4ec;">
   <div class="container">
     <h2 class="text-center" style="font-family: 'Playfair Display', serif; font-style: italic; color: #a57b65; font-size: 2rem; margin-bottom: 40px;">
       In the Spotlight
@@ -1136,7 +1179,7 @@ In collaboration with MTV Base Africa, Bamike collaborated with renowned stars l
   </section>
   
 
-<section class="news-blog-section">
+<section id="news" class="news-blog-section">
   <div class="container">
     <h2>News & Blog</h2>
 
@@ -1238,7 +1281,7 @@ In collaboration with MTV Base Africa, Bamike collaborated with renowned stars l
   </div>
 </section>
 <!-- Book an Appointment -->
-<section class="appointment-section">
+<section id="contact" class="appointment-section">
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-md-6">
